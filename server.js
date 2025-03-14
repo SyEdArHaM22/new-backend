@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 8080;
+app.use(express.json());
 
 app.get('/', (req, res) => {
   {
-    res.status("This is work Perfectly");
+    res.status(200).send("Hello from the Srever!");
   } 
 });
+
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   `Server is Running on port ${port}`
